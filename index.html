@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".list").hide(),
+
+        $(".list-head").click(function(){
+            $(".list").toggle();
+        });
+    });
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function(){
+        if(this.readyState==4 && this.status == 200){
+            var obj = JSON.parse(this.responseText);
+            for(var i=0;i<obj.length;i++)
+            {
+                document.getElementsByTagName("td") = obj.firstname;
+
+            }
+        }
+    }
+    xmlhttp.open('GET', '', true);
+    xmlhttp.send();
+    </script>
+
+</head>
+<body>
+      <div class="sidebar">
+        <header>
+           <h1><a href="#">WebSiteName</a></h1>
+        </header>
+           <a href="#" class="active" exact>Home</a>
+           <a href="#" class="list-head">Charts</a>
+           <ol class="list">
+            <li><a href="#barchart">Bar</a></li>
+            <li><a href="#linechart">Line</a></li>
+            <li><a href="#pie">Pie</a></li>
+            <li><a href="#doughnut">Doughnut</a></li>
+            <li><a href="#radar">Radar</a></li>
+           </ol>
+           <a href="#about">About</a>
+           <a href="#contact">Contact</a>
+        
+    </div>
+    <div class="main">
+        <section>
+            <div class="articles">
+                <article>
+                    <div class="paragraph">
+                    <h2><b> This is first paragraph</b></h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit dolore, hic saepe officia voluptatum nostrum autem aliquid! 
+                           Explicabo eaque quae ipsam, beatae non excepturi amet, eligendi ducimus, soluta sit accusantium!Lorem ipsum dolor sit, amet 
+                           consectetur adipisicing elit. Suscipit dolore, hic saepe officia voluptatum nostrum autem aliquid!
+                    </p>
+                    </div><br />
+                    <!-- <div class="progress">
+                        <p>Progress Bar</p>
+                        <progress value="40" max="100"></progress>
+                    </div> -->
+                    <div class="meter">
+                    <h2>Meter</h2>
+                      <meter ondragstart="dragStart(event)" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)" value="8" min="0" max="10">
+                       loading...
+                      </meter>
+                    </div><br />
+                    </article>
+                    <article>
+                        <div class="table">
+                        <h2>Table</h2>
+                        <table id="table">
+                            <tr>
+                                <td><b>Sr.No</b></td>
+                                <td><b>Firstname</b></td>
+                                <td><b>Lastname</b></td>
+                                <td><b>Email</b></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Nikita</td>
+                                <td>Patil</td>
+                                <td>patilniki@mail.com</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Sneha</td>
+                                <td>Kale</td>
+                                <td>snehakale@mail.com</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Pranjuli</td>
+                                <td>Yavatkar</td>
+                                <td>py@mail.com</td>
+                            </tr>
+                        </table>
+                    </div><br />
+                    </article>
+                </div>
+            <aside>
+                <div class="chart" id="barchart">
+                    <h2>Bar Chart</h2>
+                    <canvas id="barChart"></canvas>
+                </div>   <br />
+                <div class="chart" id="linechart">
+                    <h2>Line Chart</h2>
+                    <canvas id="lineChart"></canvas>
+                </div>  <br />
+                <div id="twoCharts" > 
+                    <div id="pie">
+                        <h2>Pie Chart</h2>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                    <div id="doughnut">
+                        <h2>Doughnut Chart</h2>
+                        <canvas id="doughnutChart"></canvas>
+                    </div>                
+                </div><br />
+                <div id="radar" class="chart">
+                    <h2>Radar Chart</h2>
+                    <canvas id="radarChart"></canvas>
+                </div>
+        </aside>
+        <article>
+            <div id="about">
+            <h1>About us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius enim voluptate ipsa 
+               ad numquam alias soluta voluptatum assumenda delectus ipsam possimus nulla dolores,
+               vitae officia natus eum illum eveniet culpa? Lorem ipsum dolor sit amet consectetur
+               adipisicing elit. Dolorum, distinctio! Odio aliquid facere repellendus tempore tempora 
+               praesentium cum unde optio quidem. Voluptatum hic iure optio voluptas assumenda, accusantium 
+               iste commodi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic amet molestias 
+               doloremque eius accusantium, minus expedita nobis, ratione quam, quia incidunt. Provident 
+               voluptatum eos veniam voluptate eligendi, repellat sequi. Consectetur.
+            </p>
+        </div>
+        </article>
+        <article>
+            <div id="contact">
+            <h1>Contact us</h1>
+            <small>abc123@mail.com</small>
+        </div>
+        </article>
+    </section>
+</div>  
+    <footer class="footer">
+        <small>Copyright &copy; 2019</small>
+    </footer>
+
+    
+    <script>
+        //Rendering Bar Graph
+    let barChart = this.document.getElementById('barChart').getContext('2d');
+    Chart.defaults.global.defaultFontFamily = 'Constantia';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = 'black';
+
+    let myChart1 = new Chart( barChart, {
+      type:'bar',
+      data:{
+              labels:['Mumbai', 'Gurugram', 'U.K.', 'U.S.','Phoenix', 'Navi Mumbai'],
+              datasets:[{
+                label:'Progress',
+                data:[200, 100, -200, 300, 450, 400],
+                backgroundColor:['#ffcdd2', '#ef9a9a','#e57373','#e53935','#c62828','#b71c1c'],
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:3,
+                hoverBorderColor:'black'
+              }]
+        },
+          options:{
+            responsive: true,
+            aspectRatio:4,
+              title:{
+                  display:true,
+                  text:'Progress of the Data',
+                  fontSize:25
+                },
+                legend:{
+                    display:true,
+                    position:'right',
+                    labels:{
+                        fontColor:'black'
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                },
+                scales: {
+                        xAxes: [{
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                            }   
+                        }]
+                }
+                    
+          }
+  });
+
+  //Rendering Line graph
+ 
+    let lineChart = this.document.getElementById('lineChart').getContext('2d');
+
+    let myChart2 = new Chart( lineChart, {
+      type:'line',
+      data:{
+              labels:['2000', '2002', '2004', '2008','2010', '2012', '2014','2016','2018'],
+              datasets:[{
+                label:'History',
+                data:[700, 200, 300, 50, 500, 400, 100,80,150],
+                fill:false,
+                backgroundColor:'#ccc',
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:3,
+                hoverBorderColor:'black'
+              },
+              {
+                label:'Geography',
+                data:[150, 80, 100, 400, 500, 50, 300,200,700],
+                fill:false,
+                backgroundColor:'gray',
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:3,
+                hoverBorderColor:'black'
+              },
+              {
+                label:'Mathematics',
+                data:[100, 150, 200, 250, 300, 400, 500, 550,700],
+                fill:false,
+                backgroundColor:'black',
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:3,
+                hoverBorderColor:'black'
+              }
+
+            ]
+        },
+          options:{
+            responsive: true,
+            aspectRatio:4,
+              title:{
+                  display:true,
+                  text:'Status of stocks',
+                  fontSize:25
+                },
+                legend:{
+                    display:true,
+                    position:'left',
+                    labels:{
+                        fontColor:'black'
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                },
+                scales: {
+                        xAxes: [{
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                            }   
+                        }]
+                    }
+                    }
+  });
+
+  //Rendering doughnut chart
+let doughnutChart = this.document.getElementById('doughnutChart').getContext('2d');
+
+    let myChart4 = new Chart( doughnutChart, {
+        type:'doughnut',
+        data:{
+                labels:['Rent','Food','Utilities','clothes','Bills'],
+                datasets:[{
+                    label:'Data',
+                    data:[20,20,20,20,20],
+                    backgroundColor:['darksalmon','indianred','#d50000','firebrick','maroon'],
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'black'
+                }]
+        },
+            options:{
+                responsive: true,
+                aspectRatio:2,
+                title:{
+                    display:true,
+                    text:'House management',
+                    fontSize:25
+                },
+                legend:{
+                    display:true,
+                    position:'right',
+                    labels:{
+                        fontColor:'black'
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                }
+                    
+            }
+    });
+
+        //Rendering pie chart
+  //creating json data
+  data = '[   {"value" : "50"}, {"value" : "30"},{"value" : "20"} ]';   
+  var mydata = JSON.parse(data);
+  let pieChart = this.document.getElementById('pieChart').getContext('2d');
+
+    let myChart3 = new Chart( pieChart, {
+        type:'pie',
+        data:{
+                labels:['Rent','Food','Utilities'],
+                datasets:[{
+                    label:'Data',
+                    //using json data here...
+                    data:[mydata[0].value, mydata[1].value, mydata[2].value],
+                    backgroundColor:['#9e9e9e','#616161','#212121'],
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'black'
+                }]
+        },
+            options:{
+                responsive: true,
+                aspectRatio:2,
+                hover: {
+                        mode: 'index'
+                    },
+                title:{
+                    display:true,
+                    text:'House management',
+                    fontSize:25
+                },
+                legend:{
+                    display:true,
+                    position:'right',
+                    labels:{
+                        fontColor:'black'
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                }
+                    
+            }
+    });
+    
+         //Rendering doughnut chart
+let radarChart = this.document.getElementById('radarChart').getContext('2d');
+
+let myChart5 = new Chart( radarChart, {
+    type:'radar',
+    data:{
+            labels:['Rent','Food','Utilities'],
+            datasets:[{
+                label:'Data',
+                data:[10,20,30],
+                backgroundColor:['#ef9a9a'],
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:3,
+                hoverBorderColor:'black'
+            }]
+         },
+    options:{
+            responsive: true,
+            aspectRatio:2,
+            title:{
+                display:true,
+                text:'House management',
+                fontSize:25
+            },
+            legend:{
+                display:true,
+                position:'right',
+                labels:{
+                    fontColor:'black'
+                }
+            },
+            layout:{
+                padding:{
+                    left:50,
+                    right:0,
+                    bottom:0,
+                    top:0
+                }
+            },
+            tooltips:{
+                enabled:true
+            }
+        
+        }
+});
+
+//plotting a 3d chart
+
+Plotly.d3.json('data.js', function(error, figure) {
+
+if(error) throw error;
+
+var trace1 = {
+      x:figure.data[0].x,
+      y:figure.data[0].y, 
+      z:figure.data[0].z,
+      marker: {color: "rgba(142,189,42,0.9)"}, 
+      name: "B18_LR_hdh", 
+      type: "bar"
+}
+
+var trace2 = {
+      x:figure.data[0].x , 
+      y:figure.data[0].y , 
+      z:figure.data[0].z ,
+      marker: {color: "rgba(29,127,109,0.8)"}, 
+      name: "B18_B1_hdh", 
+      type: "bar"
+};
+var data = [trace1, trace2];
+var layout = {
+title: "<b>B18</b><br>Cumulative Heating Degree Hours (HDH) on a weekly basis", 
+titlefont: {
+color: "#7f7f7f", 
+size: 18
+}, 
+yaxis: {title: "Weekly HDH"}
+};
+Plotly.plot('myDiv', data, layout);
+})
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[ {
+        "firstname":"Nikita",
+        "lastname":"Patil",
+        "email":"patilniki51@mail.com",
+        "password":"bharat51"
+    },
+    {       
+        "firstname":"Sneha",
+        "lastname":"Kale",
+        "email":"kalesneha@mail.com",
+        "password":"sneha"
+    },
+    {        
+        "firstname":"Pranjuli",
+        "lastname":"Yavatkar",
+        "email":"pranjuli@mail.com",
+        "password":"pranjuli"
+    },
+    {        
+        "firstname":"Prajkta",
+        "lastname":"Dadas",
+        "email":"prajkata@mail.com",
+        "password":"prajkta"
+    }
+
+]
